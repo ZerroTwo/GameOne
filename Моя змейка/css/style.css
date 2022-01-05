@@ -1,0 +1,116 @@
+body.no-tuch {
+   overflow: hidden;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+}
+#playGround {
+   display: block;
+   margin: 0px auto;
+   padding: 20px;
+   background-color: rgba(0, 0, 0, 0.2);
+   position: relative;
+}
+.discr {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.7);
+   z-index: 999;
+}
+.discr.hide {
+   display: none;
+}
+.push,
+.preload,
+.start {
+   color: #fff;
+   font-size: 25px;
+   padding: 10px;
+}
+.reset {
+   display: none;
+   position: absolute;
+   z-index: 99999;
+   width: 100%;
+   height: 100%;
+   padding: 10px;
+   border-radius: 10px;
+   color: #fff;
+   font-size: 50px;
+   background-color: rgba(255, 0, 0, 0.2);
+   cursor: pointer;
+}
+.reset.active {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+/* CONTROL ARROW */
+.control__arrow {
+   display: none;
+}
+body.tuch .control__arrow {
+   display: grid;
+   width: 180px;
+   margin: 50px auto;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-template-rows: 1fr 1r;
+   grid-gap: 30px;
+}
+
+.arrow__right {
+   transform: rotate(-90deg);
+   grid-column: 3/4;
+   grid-row: 2/3;
+}
+.arrow__left {
+   transform: rotate(90deg);
+   grid-column: 1/2;
+   grid-row: 2/3;
+}
+.arrow__down {
+   transform: rotate(0deg);
+   grid-column: 2/3;
+   grid-row: 2/3;
+}
+.arrow__up {
+   transform: rotate(-180deg);
+   grid-column: 2/3;
+   grid-row: 1/2;
+}
+
+.arrow {
+   background-color: #000;
+   width: 80px;
+   height: 80px;
+   border-radius: 5px;
+   position: relative;
+}
+.arrow::after,
+.arrow::before {
+   position: absolute;
+   content: "";
+   width: 50%;
+   height: 4px;
+   background-color: #fff;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+.arrow::after {
+   transform: rotate(45deg);
+   left: 10%;
+   top: 50%;
+}
+.arrow::before {
+   transform: rotate(-45deg);
+   left: 42%;
+   top: 50%;
+}
