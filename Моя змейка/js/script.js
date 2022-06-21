@@ -13,7 +13,7 @@ window.onload = function () {
       reset = document.querySelector('.reset'),
       arrow = document.querySelectorAll('.arrow'),
       hidden = 0;
-
+   times = 100;
 
    reset.addEventListener('click', resetGame);
    document.body.addEventListener("click", function () {
@@ -153,7 +153,11 @@ window.onload = function () {
 
    function gameLoop() {
 
-
+      if (score > 5 && times === 100 || score > 10 && times === 90 || score > 18 && times === 81) {
+         clearInterval(loop);
+         times *= 0.9;
+         loop = setInterval(gameLoop, times);
+      }
 
       if (pause == 'lost') { return };           //Блокировка игры
 
@@ -220,7 +224,7 @@ window.onload = function () {
 
    };
 
-   let loop = setInterval(gameLoop, 100);
+   let loop = setInterval(gameLoop, times);
 
 
 
