@@ -55,6 +55,7 @@ body.no-tuch {
 /* CONTROL ARROW */
 .control__arrow {
    display: none;
+   justify-content: center;
 }
 body.tuch .control__arrow {
    display: grid;
